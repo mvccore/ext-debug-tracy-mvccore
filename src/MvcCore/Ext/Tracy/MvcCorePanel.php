@@ -19,7 +19,7 @@ class MvcCorePanel implements \Tracy\IBarPanel {
 	 * Comparation by PHP function version_compare();
 	 * @see http://php.net/manual/en/function.version-compare.php
 	 */
-	const VERSION = '4.0.0';
+	const VERSION = '4.1.0';
 	/**
 	 * Debug panel id
 	 * @var string
