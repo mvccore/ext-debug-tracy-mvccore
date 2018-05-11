@@ -54,7 +54,7 @@ class MvcCorePanel implements \Tracy\IBarPanel {
 	 * @return string
 	 */
 	public function getPanel() {
-		return '<h1>\MvcCore</h1>' . \Tracy\Dumper::toHtml(\MvcCore::GetInstance(), array(
+		return '<h1>\MvcCore</h1>' . \Tracy\Dumper::toHtml(\MvcCore\Application::GetInstance(), array(
 			\Tracy\Dumper::LIVE => TRUE,
 		));
 	}
