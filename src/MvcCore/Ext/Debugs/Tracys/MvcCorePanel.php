@@ -11,8 +11,11 @@
  * @license		https://mvccore.github.io/docs/mvccore/4.0.0/LICENCE.md
  */
 
-namespace MvcCore\Ext\Debug\Tracy;
+namespace MvcCore\Ext\Debugs\Tracys;
 
+/**
+ * Responsibility - dump MvcCore framework main core objects - app, request, response, router and dispatched controller.
+ */
 class MvcCorePanel implements \Tracy\IBarPanel
 {
 	/**
