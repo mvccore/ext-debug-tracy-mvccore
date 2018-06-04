@@ -49,33 +49,33 @@ class MvcCorePanel implements \Tracy\IBarPanel
 	 */
 	public function getPanel() {
 		$app = \MvcCore\Application::GetInstance();
-		$requestCode = \Tracy\Dumper::toHtml($app->GetRequest()->InitAll(), array(
+		$requestCode = \Tracy\Dumper::toHtml($app->GetRequest()->InitAll(), [
 			\Tracy\Dumper::LIVE => TRUE,
 			\Tracy\Dumper::COLLAPSE => 1,
 			\Tracy\Dumper::DEPTH => 4,
-		));
-		$responseCode = \Tracy\Dumper::toHtml($app->GetResponse(), array(
+		]);
+		$responseCode = \Tracy\Dumper::toHtml($app->GetResponse(), [
 			\Tracy\Dumper::LIVE => TRUE,
 			\Tracy\Dumper::COLLAPSE => 1,
 			\Tracy\Dumper::DEPTH => 2,
 			\Tracy\Dumper::TRUNCATE => 40
-		));
-		$routerCode = \Tracy\Dumper::toHtml($app->GetRouter(), array(
+		]);
+		$routerCode = \Tracy\Dumper::toHtml($app->GetRouter(), [
 			\Tracy\Dumper::LIVE => TRUE,
 			\Tracy\Dumper::COLLAPSE => 1,
 			\Tracy\Dumper::DEPTH => 5,
-		));
-		$ctrlCode = \Tracy\Dumper::toHtml($app->GetController(), array(
+		]);
+		$ctrlCode = \Tracy\Dumper::toHtml($app->GetController(), [
 			\Tracy\Dumper::LIVE => TRUE,
 			\Tracy\Dumper::COLLAPSE => 1,
 			\Tracy\Dumper::COLLAPSE_COUNT => 1,
 			\Tracy\Dumper::DEPTH => 3,
-		));
-		$appCode = \Tracy\Dumper::toHtml($app, array(
+		]);
+		$appCode = \Tracy\Dumper::toHtml($app, [
 			\Tracy\Dumper::LIVE => TRUE,
 			\Tracy\Dumper::COLLAPSE => 1,
 			\Tracy\Dumper::DEPTH => 1,
-		));
+		]);
 		$result = '<h1>MvcCore</h1>'
 			.$appCode
 			.$requestCode
