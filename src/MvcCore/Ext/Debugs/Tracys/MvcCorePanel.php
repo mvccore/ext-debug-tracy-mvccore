@@ -77,6 +77,7 @@ class MvcCorePanel implements \Tracy\IBarPanel
 			\Tracy\Dumper::DEPTH => 1,
 		]);
 		$result = '<h1>MvcCore</h1>'
+			.'<style>#tracy-debug-panel-mvccore-panel pre.tracy-dump{display:block !important;}</style>'
 			.$appCode
 			.$requestCode
 			.$responseCode
