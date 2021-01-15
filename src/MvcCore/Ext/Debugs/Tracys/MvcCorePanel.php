@@ -7,8 +7,8 @@
  * For the full copyright and license information, please view
  * the LICENSE.md file that are distributed with this source code.
  *
- * @copyright	Copyright (c) 2016 Tom Flídr (https://github.com/mvccore/mvccore)
- * @license		https://mvccore.github.io/docs/mvccore/4.0.0/LICENCE.md
+ * @copyright	Copyright (c) 2016 Tom Flidr (https://github.com/mvccore)
+ * @license		https://mvccore.github.io/docs/mvccore/5.0.0/LICENCE.md
  */
 
 namespace MvcCore\Ext\Debugs\Tracys;
@@ -16,14 +16,14 @@ namespace MvcCore\Ext\Debugs\Tracys;
 /**
  * Responsibility - dump MvcCore framework main core objects - app, request, response, router and dispatched controller.
  */
-class MvcCorePanel implements \Tracy\IBarPanel
-{
+class MvcCorePanel implements \Tracy\IBarPanel {
+
 	/**
-	 * MvcCore Extension - Debug - Tracy Panel - MvcCore - version:
+	 * MvcCore Extension - Debug - Tracy - MvcCore - version:
 	 * Comparison by PHP function version_compare();
 	 * @see http://php.net/manual/en/function.version-compare.php
 	 */
-	const VERSION = '5.0.0-alpha';
+	const VERSION = '5.0.0';
 
 	/**
 	 * Get unique `Tracy` debug bar panel id.
