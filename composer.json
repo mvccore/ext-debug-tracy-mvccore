@@ -3,24 +3,24 @@
 	"type": "library",
 	"description": "MvcCore - Extension - Debug - Tracy - Panel MvcCore - render and add into tracy debug panel current MvcCore application instance, printed by \\Tracy\\Dumper::toHtml(\\MvcCore\\Application::GetInstance()); to display main application objects used to render current page response. Rendered objects inside MvcCore app: \\MvcCore\\Request, \\MvcCore\\Response, \\MvcCore\\Router, \\MvcCore\\Controller, all preroute, predispatch and postdispatch configured handlers and many other internal application values.",
 	"keywords": [
-		"mvc", 
-		"mvccore", 
-		"framework", 
-		"extension", 
-		"plugin", 
-		"plug-in", 
-		"ext", 
-		"debug", 
-		"nette", 
-		"tracy", 
-		"application", 
-		"instance", 
-		"app overview", 
-		"request", 
-		"response", 
-		"router", 
-		"controller", 
-		"handlers", 
+		"mvc",
+		"mvccore",
+		"framework",
+		"extension",
+		"plugin",
+		"plug-in",
+		"ext",
+		"debug",
+		"nette",
+		"tracy",
+		"application",
+		"instance",
+		"app overview",
+		"request",
+		"response",
+		"router",
+		"controller",
+		"handlers",
 		"internals"
 	],
 	"license": ["BSD-3-Clause"],
@@ -30,11 +30,13 @@
 	}],
 	"require": {
 		"php": ">=5.4.0",
-		"mvccore/mvccore": "dev-master",
-		"mvccore/ext-debug-tracy": "dev-master"
+		"mvccore/mvccore": "^5.0",
+		"mvccore/ext-debug-tracy": "^5.0"
 	},
 	"autoload": {
-		"classmap": ["src/"]
+		"classmap": [
+			"src/"
+		]
 	},
 	"minimum-stability": "dev"
 }
