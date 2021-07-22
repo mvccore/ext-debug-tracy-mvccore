@@ -50,31 +50,32 @@ class MvcCorePanel implements \Tracy\IBarPanel {
 	public function getPanel() {
 		$app = \MvcCore\Application::GetInstance();
 		$requestCode = \Tracy\Dumper::toHtml($app->GetRequest()->InitAll(), [
-			\Tracy\Dumper::LIVE => TRUE,
+			//\Tracy\Dumper::LIVE => TRUE,
 			\Tracy\Dumper::COLLAPSE => 1,
 			\Tracy\Dumper::DEPTH => 4,
+			\Tracy\Dumper::TRUNCATE => 1024*1024,
 		]);
 		$responseCode = \Tracy\Dumper::toHtml($app->GetResponse(), [
-			\Tracy\Dumper::LIVE => TRUE,
+			//\Tracy\Dumper::LIVE => TRUE,
 			\Tracy\Dumper::COLLAPSE => 1,
 			\Tracy\Dumper::DEPTH => 2,
-			\Tracy\Dumper::TRUNCATE => 40
+			\Tracy\Dumper::TRUNCATE => 1024
 		]);
 		$routerCode = \Tracy\Dumper::toHtml($app->GetRouter(), [
-			\Tracy\Dumper::LIVE => TRUE,
+			//\Tracy\Dumper::LIVE => TRUE,
 			\Tracy\Dumper::COLLAPSE => 1,
-			\Tracy\Dumper::DEPTH => 5,
+			\Tracy\Dumper::DEPTH => 6,
 		]);
 		$ctrlCode = \Tracy\Dumper::toHtml($app->GetController(), [
-			\Tracy\Dumper::LIVE => TRUE,
+			//\Tracy\Dumper::LIVE => TRUE,
 			\Tracy\Dumper::COLLAPSE => 1,
 			\Tracy\Dumper::COLLAPSE_COUNT => 1,
 			\Tracy\Dumper::DEPTH => 3,
 		]);
 		$appCode = \Tracy\Dumper::toHtml($app, [
-			\Tracy\Dumper::LIVE => TRUE,
+			//\Tracy\Dumper::LIVE => TRUE,
 			\Tracy\Dumper::COLLAPSE => 1,
-			\Tracy\Dumper::DEPTH => 1,
+			\Tracy\Dumper::DEPTH => 3,
 		]);
 		$result = '<h1>MvcCore</h1>'
 			.'<style>#tracy-debug-panel-mvccore-panel pre.tracy-dump{display:block !important;}</style>'
