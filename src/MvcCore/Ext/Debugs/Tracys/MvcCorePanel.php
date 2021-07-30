@@ -23,7 +23,7 @@ class MvcCorePanel implements \Tracy\IBarPanel {
 	 * Comparison by PHP function version_compare();
 	 * @see http://php.net/manual/en/function.version-compare.php
 	 */
-	const VERSION = '5.0.1';
+	const VERSION = '5.0.2';
 
 	/**
 	 * Get unique `Tracy` debug bar panel id.
@@ -77,8 +77,10 @@ class MvcCorePanel implements \Tracy\IBarPanel {
 			\Tracy\Dumper::COLLAPSE => 1,
 			\Tracy\Dumper::DEPTH => 3,
 		]);
+		$nonce = \Tracy\Helpers::getNonce();
+		$nonceAttr = $nonce ? ' nonce="' . \Tracy\Helpers::escapeHtml($nonce) . '"' : '';
 		$result = '<h1>MvcCore</h1>'
-			.'<style>#tracy-debug-panel-mvccore-panel pre.tracy-dump{display:block !important;}</style>'
+			.'<style type="text/css"'.$nonceAttr.'>#tracy-debug-panel-mvccore-panel pre.tracy-dump{display:block !important;}</style>'
 			.$appCode
 			.$requestCode
 			.$responseCode
