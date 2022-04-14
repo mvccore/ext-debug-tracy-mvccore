@@ -23,7 +23,7 @@ class MvcCorePanel implements \Tracy\IBarPanel {
 	 * Comparison by PHP function version_compare();
 	 * @see http://php.net/manual/en/function.version-compare.php
 	 */
-	const VERSION = '5.0.3';
+	const VERSION = '5.0.4';
 
 	/**
 	 * Get unique `Tracy` debug bar panel id.
@@ -88,23 +88,27 @@ SVG;
 			//\Tracy\Dumper::LIVE => TRUE,
 			\Tracy\Dumper::COLLAPSE => 1,
 			\Tracy\Dumper::DEPTH => 2,
-			\Tracy\Dumper::TRUNCATE => 1024
+			\Tracy\Dumper::TRUNCATE => 1024,
+			\Tracy\Dumper::KEYS_TO_HIDE => ['request'],
 		]);
 		$routerCode = \Tracy\Dumper::toHtml($app->GetRouter(), [
 			//\Tracy\Dumper::LIVE => TRUE,
 			\Tracy\Dumper::COLLAPSE => 1,
 			\Tracy\Dumper::DEPTH => 6,
+			\Tracy\Dumper::KEYS_TO_HIDE => ['application', 'request'],
 		]);
 		$ctrlCode = \Tracy\Dumper::toHtml($app->GetController(), [
 			//\Tracy\Dumper::LIVE => TRUE,
 			\Tracy\Dumper::COLLAPSE => 1,
 			\Tracy\Dumper::COLLAPSE_COUNT => 1,
 			\Tracy\Dumper::DEPTH => 3,
+			\Tracy\Dumper::KEYS_TO_HIDE => ['application', 'request', 'response', 'router'],
 		]);
 		$appCode = \Tracy\Dumper::toHtml($app, [
 			//\Tracy\Dumper::LIVE => TRUE,
 			\Tracy\Dumper::COLLAPSE => 1,
 			\Tracy\Dumper::DEPTH => 4,
+			\Tracy\Dumper::KEYS_TO_HIDE => ['controller', 'request', 'response', 'router'],
 		]);
 		$nonce = \Tracy\Helpers::getNonce();
 		$nonceAttr = $nonce ? ' nonce="' . \Tracy\Helpers::escapeHtml($nonce) . '"' : '';
