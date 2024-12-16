@@ -110,7 +110,9 @@ SVG;
 			\Tracy\Dumper::DEPTH => 4,
 			\Tracy\Dumper::KEYS_TO_HIDE => ['controller', 'request', 'response', 'router'],
 		]);
-		$nonce = \Tracy\Helpers::getNonce();
+		$nonce = version_compare(\Tracy\Debugger::Version, '2.10.8', '>=')
+			? \Tracy\Helpers::getNonceAttr()
+			: \Tracy\Helpers::getNonce();
 		$nonceAttr = $nonce ? ' nonce="' . \Tracy\Helpers::escapeHtml($nonce) . '"' : '';
 		$result = '<h1>MvcCore</h1>'
 			.'<style type="text/css"'.$nonceAttr.'>#tracy-debug-panel-mvccore-panel pre.tracy-dump{display:block !important;}</style>'
