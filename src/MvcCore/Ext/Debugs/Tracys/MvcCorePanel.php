@@ -110,7 +110,10 @@ SVG;
 			\Tracy\Dumper::DEPTH => 4,
 			\Tracy\Dumper::KEYS_TO_HIDE => ['controller', 'request', 'response', 'router'],
 		]);
-		$nonce = version_compare(\Tracy\Debugger::Version, '2.10.8', '>=')
+		$tracyVersion = defined("\\Tracy\\Debugger::Version")
+			? \Tracy\Debugger::Version
+			: \Tracy\Debugger::VERSION;
+		$nonce = version_compare($tracyVersion, '2.10.8', '>=')
 			? \Tracy\Helpers::getNonceAttr()
 			: \Tracy\Helpers::getNonce();
 		$nonceAttr = $nonce ? ' nonce="' . \Tracy\Helpers::escapeHtml($nonce) . '"' : '';
